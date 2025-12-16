@@ -132,7 +132,6 @@ if uploaded is not None:
     st.divider()
     st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
 st.divider()
-st.caption("Built by Toahir Hussain • Facial Emotion Detection")
 
 st.markdown(
     "<div style='background:linear-gradient(90deg,#111827,#1f2937);"
