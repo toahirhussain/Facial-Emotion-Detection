@@ -50,7 +50,10 @@ def predict(model, x):
 st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
 st.set_page_config(page_title="Emotion Classifier", page_icon="😊")
 st.title("Hello, welcome here")
-st.title("Emotion Classifier (Happy 😊 vs Sad) 😭")
+st.title("Emotion Classifier")
+st.text("Happy 😊 vs Sad 😭")
+st.text("Let's see if you are looking happy today.")
+st.text("Upload your most recent picture")
 st.write("Upload an image and the model will predict whether the person looks **Happy** or **Sad**.")
 
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
