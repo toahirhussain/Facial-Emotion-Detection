@@ -101,19 +101,20 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.divider()
-st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
 st.markdown(
     "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
     "padding:1.2rem;border-radius:12px;margin-bottom:1rem'>"
     "<h4 style='margin:0'>📸 Upload an image</h4>"
+    "<h4> Upload your most recent picture and I will tell if you are looking happy today</h4>"
     "<small>JPG / JPEG / PNG • Clear face recommended</small>"
     "</div>",
     unsafe_allow_html=True
 )
 
-uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
-img_width = st.sidebar.slider("Resize your mage", 150, 600, 320, 10)
+img_width = st.sidebar.slider("Resize image", 150, 600, 320, 10)
+uploaded = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+
 if uploaded is not None:
     img = Image.open(uploaded)
     st.image(img, caption="Uploaded Image", width=img_width)
