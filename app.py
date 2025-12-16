@@ -61,52 +61,30 @@ else:
 
 st.title(f"{greeting}, welcome here 👋")
 
-# ---------- Header ----------
-st.title(f"{greeting}, welcome here 👋")
-st.caption("Facial Emotion Detection • Happy 🙂 vs Sad 😢")
 st.divider()
+st.title("I am a facial emotion detector")
+st.text("Let's see if you are looking happy today.")
+st.divider()
+st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
-# ---------- Layout ----------
-col_left, col_right = st.columns([1.2, 1])
+uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
 
-with col_left:
-    st.subheader("Upload an image")
-    st.write("Upload a clear face photo for the best result.")
-    uploaded = st.file_uploader("Supported: JPG/JPEG/PNG", type=["jpg", "jpeg", "png"])
+if uploaded is not None:
+    img = Image.open(uploaded)
+    st.image(img, caption="Uploaded Image", width=300)
 
-    if uploaded is not None:
-        img = Image.open(uploaded)
-        st.image(img, caption="Uploaded Image", width=320)
+    model = load_model()
+    x = preprocess_image(img)
 
-with col_right:
-    st.subheader("Prediction")
-    if uploaded is None:
-        st.info("Upload an image to see the prediction.")
+    label, confidence, probs = predict(model, x)
+
+    if label.lower() == "happy":
+        emotion = "Oh no! You are looking so sad! Everything okay?"
+    elif label.lower() == "sad":
+        emotion = "You are looking happy today. What's the secrect?"
     else:
-        model = load_model()
-        x = preprocess_image(img)
-
-        label, confidence, probs = predict(model, x)
-
-        # Your message logic (you had it reversed)
-        if label.lower() == "happy":
-            emotion_msg = "You are looking happy today. What's the secret? 😊"
-        elif label.lower() == "sad":
-            emotion_msg = "Oh no! You are looking sad. Everything okay? 💛"
-        else:
-            emotion_msg = label  # fallback safety
-
-        st.success(emotion_msg)
-        st.metric("Confidence", f"{confidence:.2%}")
-
-        with st.expander("Class probabilities", expanded=True):
-            for name, p in zip(CLASS_NAMES, probs):
-                st.write(f"**{name}**: {p:.2%}")
-
-        st.warning(
-            "⚠️ This is a personal machine learning project. Results may be inaccurate due to dataset limitations, "
-            "image quality, and the complexity of human emotions."
-        )
-
+        emotion = label  # fallback safety
+    st.subheader(f"**{emotion}**")
+    st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
 st.divider()
 st.caption("Built by Toahir Hussain • Facial Emotion Detection")
