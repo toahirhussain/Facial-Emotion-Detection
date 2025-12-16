@@ -79,7 +79,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.divider()
 st.markdown(
     f"""
     <style>
@@ -100,13 +99,12 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.divider()
 
 st.markdown(
     "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
     "padding:1.2rem;border-radius:12px;margin-bottom:1rem'>"
     "<h4 style='margin:0'>📸 Upload an image</h4>"
-    "<h4> Upload your most recent picture and I will tell if you are looking happy today</h4>"
+    "<small> Upload your most recent picture and I will tell if you are looking happy today<small>"
     "<small>JPG / JPEG / PNG • Clear face recommended</small>"
     "</div>",
     unsafe_allow_html=True
