@@ -53,8 +53,7 @@ st.title("Hello, welcome here")
 st.title("Emotion Classifier")
 st.text("Happy 😊 vs Sad 😭")
 st.text("Let's see if you are looking happy today.")
-st.text("Upload your most recent picture")
-st.write("Upload an image and the model will predict whether the person looks **Happy** or **Sad**.")
+st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
 
@@ -68,9 +67,9 @@ if uploaded is not None:
     label, confidence, probs = predict(model, x)
 
     if label.lower() == "happy":
-        emotion = "Sad"
+        emotion = "Oh no! You are looking so sad! Everything okay?"
     elif label.lower() == "sad":
-        emotion = "Happy"
+        emotion = "You are looking happy today. What's the secrect?"
     else:
         emotion = label  # fallback safety
     st.subheader(f"This person looks: **{emotion}**")
