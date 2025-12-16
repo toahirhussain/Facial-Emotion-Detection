@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-import pytz
+from datetime import datetime
 
 
 # ---------------------------
@@ -50,10 +50,7 @@ def predict(model, x):
 st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="wide")
 
 # ---------- Greeting ----------
-# Streamlit Cloud often runs in UTC, so choose a timezone
-# Detroit example: America/Detroit
-tz = pytz.timezone("America/Detroit")
-hour = datetime.now(tz).hour
+hour = datetime.now().hour
 
 if hour < 12:
     greeting = "Good morning"
@@ -61,6 +58,8 @@ elif hour < 17:
     greeting = "Good afternoon"
 else:
     greeting = "Good evening"
+
+st.title(f"{greeting}, welcome here 👋")
 
 # ---------- Header ----------
 st.title(f"{greeting}, welcome here 👋")
