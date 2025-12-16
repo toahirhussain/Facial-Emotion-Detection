@@ -103,6 +103,15 @@ st.markdown(
 st.divider()
 st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
+st.markdown(
+    "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
+    "padding:1.2rem;border-radius:12px;margin-bottom:1rem'>"
+    "<h4 style='margin:0'>📸 Upload an image</h4>"
+    "<small>JPG / JPEG / PNG • Clear face recommended</small>"
+    "</div>",
+    unsafe_allow_html=True
+)
+
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
 img_width = st.sidebar.slider("Resize your mage", 150, 600, 320, 10)
 if uploaded is not None:
