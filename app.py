@@ -47,6 +47,7 @@ def predict(model, x):
 # ---------------------------
 # Streamlit UI
 # ---------------------------
+st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
 st.set_page_config(page_title="Emotion Classifier", page_icon="😊")
 st.title("Hello, welcome here")
 st.title("Emotion Classifier (Happy 😊 vs Sad) 😭")
@@ -70,7 +71,5 @@ if uploaded is not None:
     else:
         emotion = label  # fallback safety
     st.subheader(f"This person looks: **{emotion}**")
-
-st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
 
 st.sidebar.title("⚙️ Settings")
