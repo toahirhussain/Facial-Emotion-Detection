@@ -47,7 +47,7 @@ def predict(model, x):
 
 
 # ---------- Page config MUST be first ----------
-st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="wide")
+st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="centered")
 
 # ---------- Greeting ----------
 hour = datetime.now().hour
@@ -92,10 +92,22 @@ st.caption("Built by Toahir Hussain • Facial Emotion Detection")
 
 with st.sidebar:
     st.header("⚙️ Settings")
-    st.caption("Adjust options for prediction & display")
 
+    show_preview = st.checkbox("Show image preview", value=True)
     show_probs = st.checkbox("Show class probabilities", value=True)
-    img_width = st.slider("Preview image width", 200, 500, 320, 10)
+
+    img_width = st.slider("Image width", 200, 500, 320, 10)
+
+    threshold = st.slider(
+        "Decision threshold",
+        min_value=0.50,
+        max_value=0.90,
+        value=0.50,
+        step=0.01
+    )
 
     st.divider()
-    st.caption("Built by Toahir Hussain")
+    st.caption("Facial Emotion Detection")
+
+if show_preview:
+    st.image(img, width=img_width)
