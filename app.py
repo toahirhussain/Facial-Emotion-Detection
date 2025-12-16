@@ -68,10 +68,10 @@ st.divider()
 st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
-
+img_width = st.sidebar.slider("Image width", 150, 600, 320, 10)
 if uploaded is not None:
     img = Image.open(uploaded)
-    st.image(img, caption="Uploaded Image", width=300)
+    st.image(img, caption="Uploaded Image", width=img_width)
 
     model = load_model()
     x = preprocess_image(img)
