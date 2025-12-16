@@ -49,6 +49,28 @@ def predict(model, x):
 # ---------- Page config MUST be first ----------
 st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="centered")
 
+st.markdown(
+    f"""
+    <style>
+    .header {{
+        background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        color: white;
+        margin-bottom: 1.5rem;
+    }}
+    </style>
+
+    <div class="header">
+        <h1>{greeting} 👋</h1>
+        <p>Welcome to the Facial Emotion Detection App</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # ---------- Greeting ----------
 hour = datetime.now().hour
 
@@ -68,7 +90,7 @@ st.divider()
 st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
-img_width = st.sidebar.slider("Image width", 150, 600, 320, 10)
+img_width = st.sidebar.slider("Resize your mage", 150, 600, 320, 10)
 if uploaded is not None:
     img = Image.open(uploaded)
     st.image(img, caption="Uploaded Image", width=img_width)
@@ -89,23 +111,6 @@ if uploaded is not None:
     st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
 st.divider()
 st.caption("Built by Toahir Hussain • Facial Emotion Detection")
-
-with st.sidebar:
-    st.header("⚙️ Settings")
-
-    show_preview = st.checkbox("Show image preview", value=True)
-    show_probs = st.checkbox("Show class probabilities", value=True)
-
-    img_width = st.slider("Image width", 200, 500, 320, 10)
-
-    threshold = st.slider(
-        "Decision threshold",
-        min_value=0.50,
-        max_value=0.90,
-        value=0.50,
-        step=0.01
-    )
-
     st.divider()
     st.caption("Facial Emotion Detection")
 
