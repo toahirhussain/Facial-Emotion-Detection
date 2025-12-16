@@ -62,17 +62,15 @@ if uploaded is not None:
     x = preprocess_image(img)
 
     label, confidence, probs = predict(model, x)
+    # condition on label result
+    if label > 0.5:
+        emotion = "Sad"
+    else:
+        emotion = "Happy"
 
-    st.subheader(f"This person looks: **{label}**")
-    st.write(f"Confidence: **{confidence:.2%}**")
+    st.subheader(f"This person looks: **{emotion}**")"happy"
 
-    st.subheader(
-      if label > 50%:
-          emotion = "Sad"
-      Else
-          emotion = "happy"
-    )
-
+    st.subheader(f"This person looks: **{emotion}**")
     st.write("Class probabilities:")
     for name, p in zip(CLASS_NAMES, probs):
         st.write(f"- {name}: {p:.2%}")
