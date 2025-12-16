@@ -74,4 +74,3 @@ if uploaded is not None:
 st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
 
 st.sidebar.title("⚙️ Settings")
-st.sidebar.write("Upload an image to predict emotion.")
