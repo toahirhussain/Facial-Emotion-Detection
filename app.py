@@ -69,6 +69,7 @@ if uploaded is not None:
         emotion = "Happy"
     else:
         emotion = label  # fallback safety
+    st.subheader(f"This person looks: **{emotion}**")
 
 st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
 
