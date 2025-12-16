@@ -71,5 +71,5 @@ if uploaded is not None:
     else:
         emotion = label  # fallback safety
     st.subheader(f"This person looks: **{emotion}**")
-st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
+    st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
 st.sidebar.title("⚙️ Settings")
