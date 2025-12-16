@@ -66,6 +66,13 @@ if uploaded is not None:
     st.subheader(f"This person looks: **{label}**")
     st.write(f"Confidence: **{confidence:.2%}**")
 
+    st.subheader(
+      if label > 50%:
+          emotion = "Sad"
+      Else
+          emotion = "happy"
+    )
+
     st.write("Class probabilities:")
     for name, p in zip(CLASS_NAMES, probs):
         st.write(f"- {name}: {p:.2%}")
