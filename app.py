@@ -49,6 +49,16 @@ def predict(model, x):
 # ---------- Page config MUST be first ----------
 st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="centered")
 
+# ---------- Greeting ----------
+hour = datetime.now().hour
+
+if hour < 12:
+    greeting = "Good morning"
+elif hour < 17:
+    greeting = "Good afternoon"
+else:
+    greeting = "Good evening"
+
 st.markdown(
     f"""
     <style>
@@ -69,19 +79,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-# ---------- Greeting ----------
-hour = datetime.now().hour
-
-if hour < 12:
-    greeting = "Good morning"
-elif hour < 17:
-    greeting = "Good afternoon"
-else:
-    greeting = "Good evening"
-
-st.title(f"{greeting}, welcome here 👋")
 
 st.divider()
 st.title("I am a facial emotion detector")
