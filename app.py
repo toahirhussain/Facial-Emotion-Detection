@@ -63,8 +63,17 @@ if uploaded is not None:
 
     label, confidence, probs = predict(model, x)
     # condition on label result
-    st.subheader(f"This person looks: **{label}**")
+    # Reverse label
+    if label.lower() == "happy":
+        emotion = "Sad"
+    elif label.lower() == "sad":
+        emotion = "Happy"
+    else:
+        emotion = label  # fallback safety
+    
+    st.subheader(f"This person looks: **{emotion}**")
     st.write(f"Confidence: **{confidence:.2%}**")
+
 
     st.write("Class probabilities:")
     for name, p in zip(CLASS_NAMES, probs):
