@@ -111,8 +111,3 @@ if uploaded is not None:
     st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
 st.divider()
 st.caption("Built by Toahir Hussain • Facial Emotion Detection")
-    st.divider()
-    st.caption("Facial Emotion Detection")
-
-if show_preview:
-    st.image(img, width=img_width)
