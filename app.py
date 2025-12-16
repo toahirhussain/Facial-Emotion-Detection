@@ -59,7 +59,7 @@ uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
 
 if uploaded is not None:
     img = Image.open(uploaded)
-    st.image(img, caption="Uploaded Image", use_container_width=True)
+    st.image(img, caption="Uploaded Image", width=300)
 
     model = load_model()
     x = preprocess_image(img)
