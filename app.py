@@ -48,11 +48,12 @@ def predict(model, x):
 # Streamlit UI
 # ---------------------------
 st.markdown('<div class="footer">Built by: <b>Toahir Hussain</b>', unsafe_allow_html=True)
-st.set_page_config(page_title="Emotion Classifier", page_icon="😊")
+st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="wide")
 st.title("Hello, welcome here")
-st.title("Emotion Classifier")
-st.text("Happy 😊 vs Sad 😭")
+st.divider()
+st.title("I am a facial emotion detector")
 st.text("Let's see if you are looking happy today.")
+st.divider()
 st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
 uploaded = st.file_uploader("Please upload an image (jpg)", type=["jpg"])
@@ -74,4 +75,5 @@ if uploaded is not None:
         emotion = label  # fallback safety
     st.subheader(f"**{emotion}**")
     st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
-st.sidebar.title("⚙️ Settings")
+st.divider()
+st.caption("Built by Toahir Hussain • Facial Emotion Detection")
