@@ -79,10 +79,27 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 st.divider()
-st.title("I am a facial emotion detector")
-st.text("Let's see if you are looking happy today.")
+st.markdown(
+    f"""
+    <style>
+    .header {{
+        background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        color: white;
+        margin-bottom: 1.5rem;
+    }}
+    </style>
+
+    <div class="header">
+        <h1>I am a facial emotion detector</h1>
+        <p>Let's see if you are looking happy toda</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.divider()
 st.text("Upload your most recent picture and I will tell if you are looking happy today.")
 
