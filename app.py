@@ -179,7 +179,7 @@ if uploaded is not None:
               border-radius:16px;
               margin-top:1rem;">
               <div style="font-size:1.15rem;font-weight:700;margin-bottom:.4rem;">
-                   Need a little smile? 😄
+                   Need a little smile?
               </div>
               <div style="font-size:.95rem;opacity:.85;">
                   Click below and I’ll tell you a joke to brighten your day.
@@ -190,7 +190,7 @@ if uploaded is not None:
         )
     st.divider()
     # Button (functionality)
-    tell_joke = st.button("Tell me a joke 😄")
+    tell_joke = st.button("Tell me a joke")
 
     # Joke content (appears below, styled)
     if tell_joke:
@@ -205,7 +205,7 @@ if uploaded is not None:
                     Why did the hairdresser win the race?
                 </div>
                 <div style="font-size:1rem;opacity:.9;">
-                    Because he knew a shortcut! ✂️😄
+                    Because he knew a shortcut! ✂️😄😂😂
                 </div>
             </div>
             """,
