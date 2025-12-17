@@ -202,7 +202,7 @@ if uploaded is not None:
 
 
           # Joke content (appears below, styled)
-            if tell_joke:
+        if tell_joke:
               st.markdown(
                 """
                 <div style="
