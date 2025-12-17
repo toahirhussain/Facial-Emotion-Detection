@@ -98,6 +98,9 @@ with st.sidebar:
     img_width = st.slider("Resize image", 150, 600, 320, 10)
 left, right = st.columns([1.1, 1])
 
+day_update = ["Good", "Average", "Bad", "Awsome Day"]
+day_status = st.sidebar.multiselect("How is your day going", day_update)
+
 # Upload card (visual box)
 st.markdown(
     """
