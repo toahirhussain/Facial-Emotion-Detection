@@ -174,7 +174,7 @@ if uploaded is not None:
             """,
             unsafe_allow_html=True
         )
-       if show_joke:
+        if show_joke:
         # Joke card (visual)
           st.markdown(
             """
