@@ -118,7 +118,31 @@ with st.sidebar:
     img_width = st.slider("Resize image", 150, 600, 320, 10)
 left, right = st.columns([1.1, 1])
 
-uploaded = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+# Upload card (visual box)
+st.markdown(
+    """
+    <div style="
+        background:linear-gradient(90deg,#1f2937,#111827);
+        padding:1.5rem;
+        border-radius:16px;
+        text-align:center;
+        margin-bottom:0.4rem;">
+        <h3 style="margin:0">📸 Upload an image</h3>
+        <p style="opacity:.85;margin:.4rem 0 0">
+            Upload your most recent picture and I will tell if you are looking happy today
+        </p>
+        <small style="opacity:.7">JPG / JPEG / PNG • Clear face recommended</small>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Real uploader (functionality)
+uploaded = st.file_uploader(
+    "",
+    type=["jpg","jpeg","png"],
+    label_visibility="collapsed"
+)
 
 if uploaded is not None:
     img = Image.open(uploaded)
