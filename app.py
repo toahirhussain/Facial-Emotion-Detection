@@ -192,18 +192,18 @@ if uploaded is not None:
             </div>
             """,
             unsafe_allow_html=True
-          )
+           )
 
-          st.divider()
-          # Button (functionality)
-      tell_joke = st.button("Tell me a joke")
-          # --- Joke section (AFTER the message) ---
+           st.divider()
+           # Button (functionality)
+           tell_joke = st.button("Tell me a joke")
+           # --- Joke section (AFTER the message) ---
     
 
 
           # Joke content (appears below, styled)
-        if tell_joke:
-            st.markdown(
+            if tell_joke:
+              st.markdown(
                 """
                 <div style="
                   background:linear-gradient(90deg,#1f2937,#111827);
@@ -219,7 +219,7 @@ if uploaded is not None:
                 </div>
                   """,
                 unsafe_allow_html=True
-            )
+              )
         if leave_message: 
                st.markdown(
                """
