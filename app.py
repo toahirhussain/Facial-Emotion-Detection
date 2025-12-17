@@ -69,6 +69,8 @@ st.markdown(
         margin-bottom:2rem;">
         <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
         <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
+        "<h4 style='margin:0'>📸 Upload an image</h4>"
+        "<small> Upload your most recent picture and I will tell if you are looking happy today<small><br>"
     </div>
     """,
     unsafe_allow_html=True
@@ -166,9 +168,6 @@ if uploaded is not None:
         """,
         unsafe_allow_html=True
     )
-    
-    st.progress(float(confidence))
-    st.caption(f"Confidence: **{confidence:.2%}**")
 
     st.divider()
     #Warning message
