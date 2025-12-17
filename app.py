@@ -77,7 +77,7 @@ with st.sidebar:
         "<b>⚙️ Settings</b><br><small>Customize the preview</small></div>",
         unsafe_allow_html=True
     )
-    img_width = st.slider("Resize image", 150, 600, 320, 10)
+    img_width = st.slider("Resize image", 150, 600, 460, 10)
 left, right = st.columns([1.1, 1])
 
 day_update = ["Good", "Average", "Bad", "Awsome Day"]
