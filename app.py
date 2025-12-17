@@ -141,18 +141,18 @@ if uploaded is not None:
     lab = label.lower()
     
     if lab == "happy":
-        emoji = "🙂"
-        title = "Happy"
-        msg = "You are looking happy today. What's the secret?"
-    elif lab == "sad":
         emoji = "😢"
         title = "Sad"
         msg = "Oh no! You are looking sad. Everything okay?"
+    elif lab == "sad":
+        emoji = "🙂"
+        title = "Happy"
+        msg = "You are looking happy today. What's the secret?"
     else:
         emoji = ""
         title = label
         msg = label
-    
+      
     st.markdown(
         f"""
         <div style="
@@ -170,7 +170,7 @@ if uploaded is not None:
     st.progress(float(confidence))
     st.caption(f"Confidence: **{confidence:.2%}**")
 
-  
+    st.divider()
     #Warning message
     st.markdown(
     "<div style='background:linear-gradient(90deg,#7c2d12,#451a03);"
@@ -181,7 +181,6 @@ if uploaded is not None:
     "</div>",
     unsafe_allow_html=True
     )
-st.divider()
 
 st.markdown(
     "<div style='background:linear-gradient(90deg,#111827,#1f2937);"
