@@ -131,7 +131,7 @@ uploaded = st.file_uploader(
 if uploaded is not None:
     img = Image.open(uploaded).convert("RGB")
 
-    col1, col2 = st.columns([1, 1.2], gap="large")
+    col1, col2 = st.columns([1.3, 0.7], gap="large")
 
     with col1:
         st.image(img, caption="Uploaded Image", width=img_width)
