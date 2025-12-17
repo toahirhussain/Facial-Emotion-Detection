@@ -155,6 +155,7 @@ if uploaded is not None:
             msg = "You are looking happy today. What's the secret?"
             leave_message = True
             show_joke = False
+            tell_joke = False
         else:
             emoji = ""
             title = label
