@@ -170,24 +170,48 @@ if uploaded is not None:
     )
 # --- Joke section (AFTER the message) ---
     if show_joke:
-      if st.button("Tell me a joke 😄"):
-          st.markdown(
+    # Joke card (visual)
+    st.markdown(
+        """
+        <div style="
+            background:linear-gradient(90deg,#1f2937,#111827);
+            padding:1.3rem;
+            border-radius:16px;
+            margin-top:1rem;">
+            <div style="font-size:1.15rem;font-weight:700;margin-bottom:.4rem;">
+                😄 Need a little smile?
+            </div>
+            <div style="font-size:.95rem;opacity:.85;">
+                Click below and I’ll tell you a joke to brighten your day.
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Button (functionality)
+    tell_joke = st.button("Tell me a joke 😄")
+
+    # Joke content (appears below, styled)
+    if tell_joke:
+        st.markdown(
             """
             <div style="
                 background:linear-gradient(90deg,#1f2937,#111827);
                 padding:1.2rem;
                 border-radius:16px;
-                margin-top:1rem;">
-                <div style="font-size:1.15rem;font-weight:700;margin-bottom:.5rem;">
-                    😄 Why did the hairdresser win the race?
+                margin-top:.6rem;">
+                <div style="font-size:1.1rem;font-weight:700;margin-bottom:.4rem;">
+                    Why did the hairdresser win the race?
                 </div>
-                <div style="font-size:1rem;opacity:.88;">
-                    Because he knew a shortcut! ✂️
+                <div style="font-size:1rem;opacity:.9;">
+                    Because he knew a shortcut! ✂️😄
                 </div>
             </div>
             """,
             unsafe_allow_html=True
-          )
+     )
+
     st.divider()
     #Warning message
     st.markdown(
