@@ -196,13 +196,13 @@ if uploaded is not None:
 
           st.divider()
           # Button (functionality)
-          tell_joke = st.button("Tell me a joke")
+        tell_joke = st.button("Tell me a joke")
           # --- Joke section (AFTER the message) ---
     
 
 
           # Joke content (appears below, styled)
-          if tell_joke:
+        if tell_joke:
             st.markdown(
                 """
                 <div style="
