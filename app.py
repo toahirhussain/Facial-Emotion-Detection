@@ -129,46 +129,50 @@ uploaded = st.file_uploader(
 )
 
 if uploaded is not None:
-    img = Image.open(uploaded)
-    st.image(img, caption="Uploaded Image", width=img_width)
+    img = Image.open(uploaded).convert("RGB")
 
-    model = load_model()
-    x = preprocess_image(img)
+    col1, col2 = st.columns([1, 1.2], gap="large")
 
-    label, confidence, probs = predict(model, x)
-    #Output
-  
-    # --- Stylish result output ---
-    lab = label.lower()
-    
-    if lab == "happy":
-        emoji = "😢"
-        title = "Sad"
-        msg = "Oh no! You look sad. Everything okay?"
-        show_joke = True
-    elif lab == "sad":
-        emoji = "🙂"
-        title = "Happy"
-        msg = "You are looking happy today. What's the secret?"
-        show_joke = False
-    else:
-        emoji = ""
-        title = label
-        msg = label
-        show_joke = False
-    st.markdown(
-        f"""
-        <div style="
-            background:linear-gradient(90deg,#1f2937,#111827);
-            padding:1.5rem;
-            border-radius:16px;
-            margin-top:1rem;">
-            <h3 style="margin:0">{emoji} {title}</h3>
-            <p style="margin:.4rem 0 0;opacity:.85">{msg}</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    with col1:
+        st.image(img, caption="Uploaded Image", width=img_width)
+
+    with col2:
+        model = load_model()
+        x = preprocess_image(img)
+        label, confidence, probs = predict(model, x)
+
+        lab = label.lower()
+
+        if lab == "happy":
+            emoji = "😢"
+            title = "Sad"
+            msg = "Oh no! You look sad. Everything okay?"
+            show_joke = True
+        elif lab == "sad":
+            emoji = "🙂"
+            title = "Happy"
+            msg = "You are looking happy today. What's the secret?"
+            show_joke = False
+        else:
+            emoji = ""
+            title = label
+            msg = label
+            show_joke = False
+
+        st.markdown(
+            f"""
+            <div style="
+                background:linear-gradient(90deg,#1f2937,#111827);
+                padding:1.5rem;
+                border-radius:16px;">
+                <h3 style="margin:0">{emoji} {title}</h3>
+                <p style="margin:.4rem 0 0;opacity:.85">{msg}</p>
+                <p style="margin:.8rem 0 0;opacity:.75">Confidence: <b>{confidence:.2%}</b></p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 # --- Joke section (AFTER the message) ---
     if show_joke:
     # Joke card (visual)
