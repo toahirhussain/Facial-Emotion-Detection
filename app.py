@@ -179,10 +179,6 @@ if uploaded is not None:
 st.markdown(
     "<div style='background:linear-gradient(90deg,#111827,#1f2937);"
     "padding:1rem;border-radius:12px;text-align:center;margin-top:2rem'>"
-    "<small>Built by <b>Toahir Hussain</b></small><br>"
-    "<a href='https://www.linkedin.com/in/toahirhussain/' target='_blank' "
-    "style='color:#60a5fa;text-decoration:none;font-size:0.9rem'>"
-    "🔗 LinkedIn</a>"
-    "</div>",
+    "<small>Built by <b>Toahir Hussain</b></small><br>",
     unsafe_allow_html=True
 )
