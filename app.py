@@ -187,7 +187,7 @@ if uploaded is not None:
                    Need a little smile?
                 </div>
                 <div style="font-size:.95rem;opacity:.85;">
-                  Click below and I will tell you a joke to brighten your day.
+                  Click below, I will tell you a joke to brighten your day.
                 </div>
             </div>
             """,
