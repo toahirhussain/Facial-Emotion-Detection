@@ -47,7 +47,7 @@ def predict(model, x):
 
 
 # ---------- Page config MUST be first ----------
-st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="centered")
+st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="wide")
 
 # ---------- Greeting ----------
 hour = datetime.now().hour
@@ -61,20 +61,14 @@ else:
 
 st.markdown(
     f"""
-    <style>
-    .header {{
-        background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-        padding: 2rem;
-        border-radius: 12px;
-        text-align: center;
-        color: white;
-        margin-bottom: 1.5rem;
-    }}
-    </style>
-
-    <div class="header">
-        <h1>{greeting} 👋</h1>
-        <p>Welcome to the Facial Emotion Detection App</p>
+    <div style="
+        background:linear-gradient(90deg,#1f2937,#111827);
+        padding:2rem;
+        border-radius:16px;
+        text-align:center;
+        margin-bottom:2rem;">
+        <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
+        <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
     </div>
     """,
     unsafe_allow_html=True
@@ -129,28 +123,31 @@ with st.sidebar:
         unsafe_allow_html=True
     )
     img_width = st.slider("Resize image", 150, 600, 320, 10)
+left, right = st.columns([1.1, 1])
 
-uploaded = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+with left:
+    st.markdown(UPLOAD_CARD_HTML, unsafe_allow_html=True)
+    uploaded = st.file_uploader(
+        "", type=["jpg", "jpeg", "png"], label_visibility="collapsed"
+    )
 
-if uploaded is not None:
-    img = Image.open(uploaded)
-    st.image(img, caption="Uploaded Image", width=img_width)
+    if uploaded:
+        img = Image.open(uploaded).convert("RGB")
+        st.image(img, width=img_width)
 
-    model = load_model()
-    x = preprocess_image(img)
+with right:
+    st.markdown(RESULT_CARD_HTML, unsafe_allow_html=True)
 
-    label, confidence, probs = predict(model, x)
+    if uploaded:
+        model = load_model()
+        x = preprocess_image(img)
+        label, confidence, probs = predict(model, x)
 
-    if label.lower() == "happy":
-        emotion = "Oh no! You are looking so sad! Everything okay?"
-    elif label.lower() == "sad":
-        emotion = "You are looking happy today. What's the secrect?"
+        st.subheader(label)
+        st.write(f"Confidence: **{confidence:.2%}**")
     else:
-        emotion = label  # fallback safety
-    st.subheader(f"**{emotion}**")
-    st.divider()
-    st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
-st.divider()
+        st.info("Upload an image to see the prediction.")
+
 
 st.markdown(
     "<div style='background:linear-gradient(90deg,#111827,#1f2937);"
