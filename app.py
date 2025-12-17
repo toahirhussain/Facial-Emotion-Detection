@@ -47,7 +47,7 @@ def predict(model, x):
 
 
 # ---------- Page config MUST be first ----------
-st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="wide")
+st.set_page_config(page_title="Emotion Classifier", page_icon="😊", layout="centered")
 
 # ---------- Greeting ----------
 hour = datetime.now().hour
@@ -144,7 +144,15 @@ if uploaded is not None:
         emotion = label  # fallback safety
     st.subheader(f"**{emotion}**")
     st.divider()
-    st.write("⚠️ This is a personal machine learning project. Predictions may be inaccurate due to dataset limitations, image quality, and the inherent complexity of human emotions.")
+    st.markdown(
+    "<div style='background:linear-gradient(90deg,#7c2d12,#451a03);"
+    "padding:1rem;border-radius:12px;margin-top:1rem'>"
+    "<b>⚠️ Important</b><br>"
+    "<small>This is a personal machine learning project. Predictions may be inaccurate "
+    "due to dataset limitations, image quality, and the complexity of human emotions.</small>"
+    "</div>",
+    unsafe_allow_html=True
+    )
 st.divider()
 
 st.markdown(
