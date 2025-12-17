@@ -141,28 +141,43 @@ if uploaded is not None:
     lab = label.lower()
     
     if lab == "happy":
-        title = "Happy 🙂"
+        emoji = "🙂"
+        title = "Happy"
         msg = "You are looking happy today. What's the secret?"
-        st.success(f"**{title}** — {msg}")
     elif lab == "sad":
-        title = "Sad 😢"
+        emoji = "😢"
+        title = "Sad"
         msg = "Oh no! You are looking sad. Everything okay?"
-        st.error(f"**{title}** — {msg}")
     else:
+        emoji = ""
         title = label
-        msg = str(label)
-        st.info(f"**{title}**")
+        msg = label
     
-    # Confidence graphic
-    st.progress(min(max(float(confidence), 0.0), 1.0))
+    st.markdown(
+        f"""
+        <div style="
+            background:linear-gradient(90deg,#1f2937,#111827);
+            padding:1.5rem;
+            border-radius:16px;
+            margin-top:1rem;">
+            <h3 style="margin:0">{emoji} {title}</h3>
+            <p style="margin:.4rem 0 0;opacity:.85">{msg}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    st.progress(float(confidence))
     st.caption(f"Confidence: **{confidence:.2%}**")
-    st.divider()
+
   
     #Warning message
     st.markdown(
-    "<div style='border-left:4px solid #f59e0b;"
-    "padding:.8rem 1rem;background:#111827;border-radius:8px'>"
-    "⚠️ <small>Predictions may be inaccurate due to data and image limitations.</small>"
+    "<div style='background:linear-gradient(90deg,#7c2d12,#451a03);"
+    "padding:1rem;border-radius:12px;margin-top:1rem'>"
+    "<b>⚠️ Important</b><br>"
+    "<small>This is a personal machine learning project. Predictions may be inaccurate "
+    "due to dataset limitations, image quality, and the complexity of human emotions.</small>"
     "</div>",
     unsafe_allow_html=True
     )
