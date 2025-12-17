@@ -184,10 +184,10 @@ if uploaded is not None:
                 border-radius:16px;
                 margin-top:1rem;">
                 <div style="font-size:1.15rem;font-weight:700;margin-bottom:.4rem;">
-                   Today is your day.
+                   Need a little smile?
                 </div>
                 <div style="font-size:.95rem;opacity:.85;">
-                  Enjoy rest of your day. Cheers!!!
+                  Click below and I will tell you a joke to brighten your day.
                 </div>
             </div>
             """,
@@ -229,10 +229,10 @@ if uploaded is not None:
                      border-radius:16px;
                      margin-top:1rem;">
                      <div style="font-size:1.15rem;font-weight:700;margin-bottom:.4rem;">
-                       Need a little smile?
+                       Today is your day.
                      </div>
                      <div style="font-size:.95rem;opacity:.85;">
-                      Click below and I’ll tell you a joke to brighten your day.
+                      Enjoy rest of your day. Cheers!!!
                      </div>
                    </div>
                 """,
