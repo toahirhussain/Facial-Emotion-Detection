@@ -239,9 +239,9 @@ if uploaded is not None:
                   """,
                 unsafe_allow_html=True
            )
-           if leave_message: 
+          if leave_message: 
                st.markdown(
-                  """
+               """
                    <div style="
                      background:linear-gradient(90deg,#1f2937,#111827);
                      padding:1.3rem;
@@ -254,9 +254,9 @@ if uploaded is not None:
                       Click below and I’ll tell you a joke to brighten your day.
                      </div>
                    </div>
-                  """,
-                  unsafe_allow_html=True
-            )
+                """,
+                unsafe_allow_html=True
+          )
     st.divider()
     #Warning message
     st.markdown(
