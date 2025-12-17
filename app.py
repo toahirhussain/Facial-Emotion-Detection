@@ -194,9 +194,9 @@ if uploaded is not None:
             unsafe_allow_html=True
            )
 
-           st.divider()
+        st.divider()
            # Button (functionality)
-           tell_joke = st.button("Tell me a joke")
+        tell_joke = st.button("Tell me a joke")
            # --- Joke section (AFTER the message) ---
     
 
