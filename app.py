@@ -59,70 +59,37 @@ elif hour < 17:
 else:
     greeting = "Good evening"
 
-st.markdown(
-    f"""
-    <div style="
-        background:linear-gradient(90deg,#1f2937,#111827);
-        padding:2rem;
-        border-radius:16px;
-        text-align:center;
-        margin-bottom:2rem;">
-        <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
-        <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-st.markdown(
-    f"""
-    <style>
-    .header {{
-        background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-        padding: 2rem;
-        border-radius: 12px;
-        text-align: center;
-        color: white;
-        margin-bottom: 1.5rem;
-    }}
-    </style>
+HEADER_CARD_HTML = f"""
+<div style="background:linear-gradient(90deg,#1f2937,#111827);
+padding:2rem;border-radius:16px;text-align:center;margin-bottom:1.5rem;">
+  <h1 style="margin:0">{greeting} 👋</h1>
+  <p style="opacity:.85;margin:.4rem 0 0">Welcome to the Facial Emotion Detection App</p>
+</div>
+"""
 
-    <div class="header">
-        <h1>I am a facial emotion detector</h1>
-        <p>Let's see if you are looking happy today</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+UPLOAD_CARD_HTML = """
+<div style="background:linear-gradient(90deg,#0b1220,#111827);
+padding:1.2rem;border-radius:12px;margin-bottom:1rem;">
+  <h4 style="margin:0">📸 Upload an image</h4>
+  <small style="display:block;margin-top:6px;opacity:.85;">
+    Upload your most recent picture and I will predict Happy vs Sad.
+  </small>
+  <small style="display:block;margin-top:4px;opacity:.7;">
+    JPG / JPEG / PNG • Clear face recommended
+  </small>
+</div>
+"""
 
-st.markdown(
-    "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
-    "padding:1.2rem;border-radius:12px;margin-bottom:1rem'>"
-    "<h4 style='margin:0'>📸 Upload an image</h4>"
-    "<small> Upload your most recent picture and I will tell if you are looking happy today<small><br>"
-    "<small>JPG / JPEG / PNG • Clear face recommended</small>"
-    "</div>",
-    unsafe_allow_html=True
-)
+RESULT_CARD_HTML = """
+<div style="background:linear-gradient(90deg,#0b1220,#111827);
+padding:1.2rem;border-radius:12px;margin-bottom:1rem;">
+  <h4 style="margin:0">📊 Result</h4>
+  <small style="display:block;margin-top:6px;opacity:.75;">
+    Prediction will appear here after upload.
+  </small>
+</div>
+"""
 
-#sidebar
-st.markdown("""
-<style>
-section[data-testid="stSidebar"] > div{
-  background: linear-gradient(180deg,#0b1220,#111827);
-  border-right: 1px solid rgba(255,255,255,.06);
-}
-section[data-testid="stSidebar"] * { color: #e5e7eb; }
-</style>
-""", unsafe_allow_html=True)
-
-with st.sidebar:
-    st.markdown(
-        "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
-        "padding:1rem;border-radius:12px;margin-bottom:1rem'>"
-        "<b>⚙️ Settings</b><br><small>Customize the preview</small></div>",
-        unsafe_allow_html=True
-    )
-    img_width = st.slider("Resize image", 150, 600, 320, 10)
 left, right = st.columns([1.1, 1])
 
 with left:
