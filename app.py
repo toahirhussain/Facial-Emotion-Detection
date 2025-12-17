@@ -169,15 +169,25 @@ if uploaded is not None:
         unsafe_allow_html=True
     )
 # --- Joke section (AFTER the message) ---
-if show_joke:
-    if st.button("Tell me a joke 😄"):
-        st.markdown(
-            "<div style='margin-top:1rem;'>"
-            "<b>Why did the hairdresser win the race?</b><br>"
-            "Because he knew a shortcut! ✂️😄"
-            "</div>",
+    if show_joke:
+      if st.button("Tell me a joke 😄"):
+          st.markdown(
+            """
+            <div style="
+                background:linear-gradient(90deg,#1f2937,#111827);
+                padding:1.2rem;
+                border-radius:16px;
+                margin-top:1rem;">
+                <div style="font-size:1.15rem;font-weight:700;margin-bottom:.5rem;">
+                    😄 Why did the hairdresser win the race?
+                </div>
+                <div style="font-size:1rem;opacity:.88;">
+                    Because he knew a shortcut! ✂️
+                </div>
+            </div>
+            """,
             unsafe_allow_html=True
-        )
+          )
     st.divider()
     #Warning message
     st.markdown(
