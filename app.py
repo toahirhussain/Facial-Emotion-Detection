@@ -59,24 +59,6 @@ elif hour < 17:
 else:
     greeting = "Good evening"
 
-st.markdown(
-    f"""
-    <div style="
-        background:linear-gradient(90deg,#1f2937,#111827);
-        padding:2rem;
-        border-radius:16px;
-        text-align:center;
-        margin-bottom:2rem;">
-        <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
-        <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
-        <br>
-        <h1>I am a facial emotion detector</h1>
-        <p>Let's see if you are looking happy today</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 #sidebar
 st.markdown("""
 <style>
@@ -100,6 +82,25 @@ left, right = st.columns([1.1, 1])
 
 day_update = ["Good", "Average", "Bad", "Awsome Day"]
 day_status = st.sidebar.multiselect("How is your day going", day_update)
+
+
+st.markdown(
+    f"""
+    <div style="
+        background:linear-gradient(90deg,#1f2937,#111827);
+        padding:2rem;
+        border-radius:16px;
+        text-align:center;
+        margin-bottom:2rem;">
+        <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
+        <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
+        <br>
+        <h1>I am a facial emotion detector</h1>
+        <p>Let's see if you are looking happy today</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Upload card (visual box)
 st.markdown(
