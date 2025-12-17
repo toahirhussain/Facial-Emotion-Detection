@@ -153,8 +153,8 @@ if uploaded is not None:
             emoji = "🙂"
             title = "Happy"
             msg = "You are looking happy today. What's the secret?"
-            show_joke = False
             leave_message = True
+            show_joke = False
         else:
             emoji = ""
             title = label
