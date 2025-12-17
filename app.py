@@ -81,7 +81,7 @@ with st.sidebar:
 left, right = st.columns([1.1, 1])
 
 day_update = ["Good", "Average", "Bad", "Awsome Day"]
-day_status = st.sidebar.select("How is your day going", day_update)
+day_status = st.sidebar.selecboxt("How is your day going", day_update)
 if day_status == "Good":
       st.text("Enjoy your day 😊")
 else:
