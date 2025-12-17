@@ -144,21 +144,17 @@ if uploaded is not None:
         emoji = "😢"
         title = "Sad"
         msg = "Oh no! You look sad. Everything okay?"
-          
-        if st.button("Tell me a joke 😄"):
-            st.markdown(
-                "**Why did the hairdresser win the race?**\n\n"
-                "Because he knew a shortcut! ✂️😄"
-            )
+        show_joke = True
     elif lab == "sad":
         emoji = "🙂"
         title = "Happy"
         msg = "You are looking happy today. What's the secret?"
+        show_joke = False
     else:
         emoji = ""
         title = label
         msg = label
-      
+        show_joke = False
     st.markdown(
         f"""
         <div style="
@@ -172,7 +168,16 @@ if uploaded is not None:
         """,
         unsafe_allow_html=True
     )
-
+# --- Joke section (AFTER the message) ---
+if show_joke:
+    if st.button("Tell me a joke 😄"):
+        st.markdown(
+            "<div style='margin-top:1rem;'>"
+            "<b>Why did the hairdresser win the race?</b><br>"
+            "Because he knew a shortcut! ✂️😄"
+            "</div>",
+            unsafe_allow_html=True
+        )
     st.divider()
     #Warning message
     st.markdown(
