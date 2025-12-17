@@ -143,15 +143,10 @@ if uploaded is not None:
     if lab == "happy":
         emoji = "😢"
         title = "Sad"
-        msg = (
-        "Oh no! You are looking sad. Everything okay?\n\n"
-          <br>
-        "Let me tell you a joke to make your day better \n"
-          <br>
-        "Why did the hairdresser win the race?\n"
-          <br>
-        "Because he knew a shortcut!😄"
-          )
+        st.write("Oh no! You are looking sad. Everything okay?")
+        st.write("Let me tell you a joke to make your day better ")
+        st.write("**Why did the hairdresser win the race?**")
+        st.write("Because he knew a shortcut!😄")
     elif lab == "sad":
         emoji = "🙂"
         title = "Happy"
