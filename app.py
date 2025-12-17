@@ -89,9 +89,6 @@ st.markdown(
     <div class="header">
         <h1>I am a facial emotion detector</h1>
         <p>Let's see if you are looking happy today</p>
-        <br>
-        <h4 style='margin:0'>📸 Upload an image</h4>
-        <small> Upload your most recent picture and I will tell if you are looking happy today<small>
     </div>
     """,
     unsafe_allow_html=True
