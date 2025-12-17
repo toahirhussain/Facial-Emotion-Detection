@@ -193,33 +193,6 @@ if uploaded is not None:
             """,
             unsafe_allow_html=True
            )
-
-          st.divider()
-             # Button (functionality)
-          tell_joke = st.button("Tell me a joke")
-             # --- Joke section (AFTER the message) ---
-    
-
-
-              # Joke content (appears below, styled)
-          if tell_joke:
-                 st.markdown(
-                  """
-                  <div style="
-                    background:linear-gradient(90deg,#1f2937,#111827);
-                    padding:1.2rem;
-                    border-radius:16px;
-                    margin-top:.6rem;">
-                    <div style="font-size:1.1rem;font-weight:700;margin-bottom:.4rem;">
-                      Why did the hairdresser win the race?
-                    </div>
-                    <div style="font-size:1rem;opacity:.9;">
-                    Because he knew a shortcut! ✂️😄😂😂
-                    </div>
-                  </div>
-                  """,
-                  unsafe_allow_html=True
-                 )
         if leave_message: 
                st.markdown(
                """
@@ -238,6 +211,33 @@ if uploaded is not None:
                 """,
                 unsafe_allow_html=True
                )
+st.divider()
+             # Button (functionality)
+tell_joke = st.button("Tell me a joke")
+             # --- Joke section (AFTER the message) ---
+    
+
+
+              # Joke content (appears below, styled)
+if tell_joke:
+                 st.markdown(
+                  """
+                  <div style="
+                    background:linear-gradient(90deg,#1f2937,#111827);
+                    padding:1.2rem;
+                    border-radius:16px;
+                    margin-top:.6rem;">
+                    <div style="font-size:1.1rem;font-weight:700;margin-bottom:.4rem;">
+                      Why did the hairdresser win the race?
+                    </div>
+                    <div style="font-size:1rem;opacity:.9;">
+                    Because he knew a shortcut! ✂️😄😂😂
+                    </div>
+                  </div>
+                  """,
+                  unsafe_allow_html=True
+                 )
+            
     st.divider()
     #Warning message
     st.markdown(
