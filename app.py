@@ -148,7 +148,7 @@ if uploaded is not None:
         "Let me tell you a joke to make your day better 😄\n"
         "Why did the hairdresser win the race?\n"
         "Because he knew a shortcut!"
-        (
+          )
     elif lab == "sad":
         emoji = "🙂"
         title = "Happy"
