@@ -144,10 +144,10 @@ if uploaded is not None:
         emoji = "😢"
         title = "Sad"
         msgs = [
-                "Oh no! You are looking sad. Everything okay?",
-                "Let me tell you a joke to make your day better 😄",
-                "Why did the hairdresser win the race?",
-                "Because he knew a shortcut!"
+                "Oh no! You are looking sad. Everything okay?<br><br>",
+                "Let me tell you a joke to make your day better<br>",
+                "Why did the hairdresser win the race?<br>",
+                "Because he knew a shortcut!😄"
           ]
         msg = "\n".join(msgs)
     elif lab == "sad":
