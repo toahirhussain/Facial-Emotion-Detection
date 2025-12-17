@@ -1,4 +1,4 @@
-# Check the app : https://facialemotiondetector.streamlit.app/
+## Check the app : https://facialemotiondetector.streamlit.app/
 
 # Emotion Detection Using Image Classification (Happy vs Sad)
 
