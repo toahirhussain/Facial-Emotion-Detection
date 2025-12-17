@@ -82,9 +82,10 @@ left, right = st.columns([1.1, 1])
 
 day_update = ["Good", "Average", "Bad", "Awsome Day"]
 day_status = st.sidebar.selectbox("How is your day going", day_update)
-if day_status == "Good":
+with st.sidebar:
+  if day_status == "Good":
     st.success("Enjoy your day 😊")
-else:
+  else:
     st.info("Hope your day gets better 🌤️")
 
 st.markdown(
