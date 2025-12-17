@@ -238,8 +238,8 @@ if uploaded is not None:
                 </div>
                   """,
                 unsafe_allow_html=True
-           )
-         if leave_message: 
+            )
+          if leave_message: 
                st.markdown(
                """
                    <div style="
