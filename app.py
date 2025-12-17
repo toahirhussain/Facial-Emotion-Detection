@@ -145,12 +145,11 @@ if uploaded is not None:
         title = "Sad"
         if lab == "sad":
           st.markdown("🫂 **Oh no! You look sad. Everything okay?**")
-
             if st.button("Tell me a joke 😄"):
             st.markdown(
             "**Why did the hairdresser win the race?**\n\n"
             "Because he knew a shortcut! ✂️😄"
-        )
+            )
     elif lab == "sad":
         emoji = "🙂"
         title = "Happy"
