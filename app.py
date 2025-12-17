@@ -77,7 +77,7 @@ with st.sidebar:
         "<b>⚙️ Settings</b><br><small>Customize the preview</small></div>",
         unsafe_allow_html=True
     )
-    img_width = st.slider("Resize image", 150, 600, 460, 10)
+    img_width = st.slider("Resize image", 150, 600, 465, 5)
 left, right = st.columns([1.1, 1])
 
 day_update = ["Good", "Average", "Bad", "Awsome Day"]
@@ -213,7 +213,7 @@ if uploaded is not None:
                )
     st.divider()
              # Button (functionality)
-    tell_joke = st.button("Tell me a joke")
+    tell_joke = st.button("Tell me a joke",  key="tell_joke_center")
              # --- Joke section (AFTER the message) ---
     
 
