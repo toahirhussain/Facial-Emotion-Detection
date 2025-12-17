@@ -147,8 +147,8 @@ if uploaded is not None:
             emoji = "😢"
             title = "Sad"
             msg = "Oh no! You look sad. Everything okay?"
-            leave_message = False
             show_joke = True
+            leave_message = False
         elif lab == "sad":
             emoji = "🙂"
             title = "Happy"
