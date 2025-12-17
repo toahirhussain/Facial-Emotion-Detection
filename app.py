@@ -174,7 +174,7 @@ if uploaded is not None:
             """,
             unsafe_allow_html=True
         )
-      if show_joke:
+       if show_joke:
         # Joke card (visual)
           st.markdown(
             """
@@ -196,7 +196,7 @@ if uploaded is not None:
 
           st.divider()
           # Button (functionality)
-        tell_joke = st.button("Tell me a joke")
+      tell_joke = st.button("Tell me a joke")
           # --- Joke section (AFTER the message) ---
     
 
