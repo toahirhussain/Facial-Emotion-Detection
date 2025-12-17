@@ -113,7 +113,6 @@ st.markdown(
         <p style="opacity:.85;margin:.4rem 0 0">
             Upload your most recent picture and I will tell if you are looking happy today
         </p>
-        <small style="opacity:.7">JPG / JPEG / PNG • Clear face recommended</small>
     </div>
     """,
     unsafe_allow_html=True
