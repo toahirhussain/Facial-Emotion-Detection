@@ -191,7 +191,7 @@ if uploaded is not None:
             unsafe_allow_html=True
           )
           if show_joke:
-        # Joke card (visual)
+            # Joke card (visual)
             st.markdown(
             """
               <div style="
@@ -209,14 +209,13 @@ if uploaded is not None:
             """,
             unsafe_allow_html=True
           )
-    st.divider()
-    st.divider()
-    # Button (functionality)
-    tell_joke = st.button("Tell me a joke")
-# --- Joke section (AFTER the message) ---
+          st.divider()
+          # Button (functionality)
+          tell_joke = st.button("Tell me a joke")
+          # --- Joke section (AFTER the message) ---
     
-    # Button (functionality)
-    tell_joke = st.button("Tell me a joke")
+          # Button (functionality)
+          tell_joke = st.button("Tell me a joke")
 
     # Joke content (appears below, styled)
     if tell_joke:
