@@ -92,8 +92,7 @@ st.markdown(
         border-radius:16px;
         text-align:center;
         margin-bottom:2rem;">
-        <h1 style="margin-bottom:0.3rem;">{greeting} 👋</h1>
-        <p style="opacity:0.85;">Welcome to the Facial Emotion Detection App</p>
+        <h3 style="margin-bottom:0.3rem;">{greeting} 👋</h3>
         <br>
         <h1>I am a facial emotion detector</h1>
         <p>Let's see if you are looking happy today</p>
