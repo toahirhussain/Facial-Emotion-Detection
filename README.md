@@ -1,6 +1,5 @@
 ## Check the app : https://facialemotiondetector.streamlit.app/
-<img width="760" height="1238" alt="{4C25F974-8782-4DE8-8CD6-B02DD56D8CA3}" src="https://github.com/user-attachments/assets/ca70078e-8252-42fb-ab6a-46294d2e8c9b" />
-
+<img width="619" height="1181" alt="{B641A14D-93CE-4D7A-8F8A-021B4D303690}" src="https://github.com/user-attachments/assets/60dbe53d-57c6-4011-828d-6ac7cfe8b2d9" />
 
 # Emotion Detection Using Image Classification (Happy vs Sad)
 
