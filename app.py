@@ -110,7 +110,26 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-img_width = st.sidebar.slider("Resize image", 150, 600, 320, 10)
+#sidebar
+st.markdown("""
+<style>
+section[data-testid="stSidebar"] > div{
+  background: linear-gradient(180deg,#0b1220,#111827);
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+section[data-testid="stSidebar"] * { color: #e5e7eb; }
+</style>
+""", unsafe_allow_html=True)
+
+with st.sidebar:
+    st.markdown(
+        "<div style='background:linear-gradient(90deg,#1f2937,#111827);"
+        "padding:1rem;border-radius:12px;margin-bottom:1rem'>"
+        "<b>⚙️ Settings</b><br><small>Customize the preview</small></div>",
+        unsafe_allow_html=True
+    )
+    img_width = st.slider("Resize image", 150, 600, 320, 10)
+
 uploaded = st.file_uploader("", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
 
 if uploaded is not None:
