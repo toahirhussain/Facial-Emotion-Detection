@@ -153,6 +153,25 @@ if uploaded is not None:
             title = "Happy"
             msg = "You are looking happy today. What's the secret?"
             show_joke = False
+            if show_joke:
+            # Joke card (visual)
+              st.markdown(
+                """
+                <div style="
+                  background:linear-gradient(90deg,#1f2937,#111827);
+                  padding:1.3rem;
+                  border-radius:16px;
+                  margin-top:1rem;">
+                  <div style="font-size:1.15rem;font-weight:700;margin-bottom:.4rem;">
+                     Need a little smile?
+                  </div>
+                  <div style="font-size:.95rem;opacity:.85;">
+                    Click below and I’ll tell you a joke to brighten your day.
+                  </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+              )
         else:
             emoji = ""
             title = label
