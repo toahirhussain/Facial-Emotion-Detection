@@ -147,6 +147,7 @@ if uploaded is not None:
             emoji = "😢"
             title = "Sad"
             msg = "Oh no! You look sad. Everything okay?"
+            leave_message = False
             show_joke = True
         elif lab == "sad":
             emoji = "🙂"
@@ -159,6 +160,7 @@ if uploaded is not None:
             title = label
             msg = label
             show_joke = False
+            leave_message = False
 
         st.markdown(
             f"""
