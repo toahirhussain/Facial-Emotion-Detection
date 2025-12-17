@@ -144,13 +144,13 @@ if uploaded is not None:
         emoji = "😢"
         title = "Sad"
         msg = "Oh no! You are looking sad. Everything okay?"
+        msg = "let me tell you a joke to make your day better."
+        msg = "Why did the hairdresser win the race?"
+        msg = "He knew a shortcut."
     elif lab == "sad":
         emoji = "🙂"
         title = "Happy"
         msg = "You are looking happy today. What's the secret?"
-        msg = "let me tell you a joke to make your day better."
-        msg = "Why did the hairdresser win the race?"
-        msg = "He knew a shortcut."
     else:
         emoji = ""
         title = label
