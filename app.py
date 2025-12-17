@@ -256,7 +256,7 @@ if uploaded is not None:
                    </div>
                 """,
                 unsafe_allow_html=True
-        )
+                )
     st.divider()
     #Warning message
     st.markdown(
