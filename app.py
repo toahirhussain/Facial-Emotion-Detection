@@ -170,8 +170,7 @@ if uploaded is not None:
     "<div style='background:linear-gradient(90deg,#7c2d12,#451a03);"
     "padding:1rem;border-radius:12px;margin-top:1rem'>"
     "<b>⚠️ Important</b><br>"
-    "<small>This is a personal machine learning project. Predictions may be inaccurate "
-    "due to dataset limitations, image quality, and the complexity of human emotions.</small>"
+    "<small>This is a personal machine learning project. If you receive an incorrect prediction, it may be due to dataset limitations, image quality, or the complexity of human emotions.</small>"
     "</div>",
     unsafe_allow_html=True
     )
