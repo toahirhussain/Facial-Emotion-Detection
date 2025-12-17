@@ -217,8 +217,7 @@ if uploaded is not None:
           tell_joke = st.button("Tell me a joke")
           # --- Joke section (AFTER the message) ---
     
-          # Button (functionality)
-          tell_joke = st.button("Tell me a joke")
+
 
           # Joke content (appears below, styled)
           if tell_joke:
