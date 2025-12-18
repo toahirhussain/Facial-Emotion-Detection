@@ -135,7 +135,7 @@ if uploaded is not None:
     col1, col2 = st.columns([1.3, 0.7], gap="large")
 
     with col1:
-        st.image(img, caption="Uploaded Image", width=img_width)
+        st.image(img, width=img_width)
 
     with col2:
         model = load_model()
