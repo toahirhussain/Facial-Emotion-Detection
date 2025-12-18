@@ -1,5 +1,5 @@
 ## Check the app : https://facialemotiondetector.streamlit.app/
-## App UI
+## App UI below
 <img width="618" height="1142" alt="{C8B02DDC-EC63-4624-A99F-B197CA84466C}" src="https://github.com/user-attachments/assets/2eb17aaa-71a9-4251-a5d5-dbd02cfc570c" />
 
 
