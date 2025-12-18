@@ -110,4 +110,4 @@
 
 Toahir Hussain
 
-Machine Learning & Data Analytics Enthusiast
+Machine Learning & Data Analytics Specialist
